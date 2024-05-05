@@ -12,6 +12,21 @@ function createDummyData() {
       address: faker.location.streetAddress(),
       phone: faker.phone.number(),
       website: faker.internet.domainName(),
+      subRows: (() => {
+        const numSubRows = Math.floor(Math.random() * 8) + 1;
+        const subRows = [];
+        for (let j = 0; j < numSubRows; j++) {
+          subRows.push({
+            id: faker.string.uuid(),
+            name: faker.person.fullName(),
+            email: faker.internet.email(),
+            address: faker.location.streetAddress(),
+            phone: faker.phone.number(),
+            website: faker.internet.domainName(),
+          });
+        }
+        return subRows;
+      })(),
     };
     data.push(newUser);
   }

@@ -5,4 +5,5 @@ export interface IUser {
   address: string;
   phone: string;
   website: string;
+  subRows?: IUser[];
 }
